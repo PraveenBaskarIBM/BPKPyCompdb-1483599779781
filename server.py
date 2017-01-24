@@ -25,6 +25,10 @@ client = MongoClient(mongodb_url)
 #get the default database:
 db = client.get_default_database()  
 print('connected to mongodb!, welcome to mongodb connection, have a fun') 
+##Jan24
+db.Regtable_bpk.drop()
+header= [ "col2", "col3", "col4", "col5", "col6", "col7", "col8", "col9", "col10"]
+
 
 ###----Regression Code begins------###
 import pandas as pd
@@ -56,6 +60,12 @@ print df2
 
 
 ###----Regression Code Ends------###
+for each in df2:
+    #print(each)
+    row={}
+    for field in header:
+        row[field]=each[field]
+    db.Regtable_bpk.insert(row)
 
 # VCAP_SERVICES mapping END
 
