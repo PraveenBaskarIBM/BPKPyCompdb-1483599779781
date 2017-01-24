@@ -23,8 +23,8 @@ mongodb_url = services_json['compose-for-mongodb'][0]['credentials']['uri']
 #connect:
 client = MongoClient(mongodb_url)  
 #get the default database:
-db = client.get_default_database() 
-print(db) 
+#db = client.get_default_database()
+db = client.WATMODELS 
 print('connected to mongodb!, welcome to mongodb connection, have a fun') 
 
 
@@ -59,7 +59,7 @@ print df2
 
 ###----Regression Code Ends------###
 ##Jan24
-db.Regtable_bpk.drop()
+#db.Regtable_bpk.drop()
 header= [ "col2", "col3", "col4", "col5", "col6", "col7", "col8", "col9", "col10"]
 
 for each in df2:
